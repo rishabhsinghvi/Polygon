@@ -19,12 +19,12 @@
 
 
 #if defined(_DEBUG)
-    #include "Logger/Logger.h"
-    #define POLYGON_ASSERT_ERROR(cond, msg, ...)  if(!(cond)) {  POLYGON_LOG_CRITICAL(msg, __VA_ARGS__); DEBUG_BREAK; }
-    #define POLYGON_ASSERT_WARNING(cond, msg, ...) if(!(cond)) { POLYGON_LOG_WARNING(msg, __VA_ARGS__); }
+    #include "Core/Logger/PLogger.h"
+    #define POLYGON_ASSERT_ERROR(cond, ...)  if(!(cond)) {  POLYGON_LOG_CRITICAL(__VA_ARGS__); DEBUG_BREAK; }
+    #define POLYGON_ASSERT_WARNING(cond, ...) if(!(cond)) { POLYGON_LOG_WARNING(__VA_ARGS__); }
 #else 
-    #define POLYGON_ASSERT_ERROR(cond, msg, ...) 
-    #define POLY_ASSERT_WARNING(cond, msg, ...)
+    #define POLYGON_ASSERT_ERROR(cond, ...) 
+    #define POLY_ASSERT_WARNING(cond, ...)
 #endif //_DEBUG
 
 #endif // POLYGON_ASSERTION_H

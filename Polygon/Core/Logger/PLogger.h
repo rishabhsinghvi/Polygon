@@ -7,7 +7,7 @@
     #define POLYGON_LOG_INFO(...) spdlog::info(__VA_ARGS__)
     #define POLYGON_LOG_WARN(...) spdlog::warn(__VA_ARGS__)
     #define POLYGON_LOG_ERROR(...) spdlog::error(__VA_ARGS__)
-    #define POLYGON_LOG_CRITICAl(...) spdlog::critical(__VA_ARGS__)
+    #define POLYGON_LOG_CRITICAL(...) spdlog::critical(__VA_ARGS__)
 #else
     #define POLYGON_LOG_INFO(...)
     #define POLYGON_LOG_WARN(...) 

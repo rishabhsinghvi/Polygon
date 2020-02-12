@@ -1,6 +1,4 @@
-#include "PStackAllocator.h"
-
-#include <cstdlib>
+#include "PLinearAllocator.h"
 
 namespace Polygon
 {
@@ -8,21 +6,21 @@ namespace Polygon
 	{
 		namespace Memory
 		{
-			StackAllocator::StackAllocator()
+			LinearAllocator::LinearAllocator()
 			{
 				m_StartPtr = ::malloc(1024);
 				m_CurPtr = m_StartPtr;
 				m_ArenaSize = 1024;
 			}
 
-			StackAllocator::StackAllocator(std::size_t arenaSize)
+			LinearAllocator::LinearAllocator(std::size_t arenaSize)
 			{
 				m_StartPtr = ::malloc(arenaSize);
 				m_CurPtr = m_StartPtr;
 				m_ArenaSize = arenaSize;
 			}
 
-			StackAllocator::~StackAllocator()
+			LinearAllocator::~LinearAllocator()
 			{
 				::free(m_StartPtr);
 
@@ -32,26 +30,22 @@ namespace Polygon
 				m_ArenaSize = 0;
 			}
 
-
-
-			void* StackAllocator::Allocate(std::size_t numBytes, std::size_t alignment)
+			void* LinearAllocator::Allocate(std::size_t numBytes, std::size_t alignment)
 			{
-				
+				auto adjustment = Allocator::GetForwardAdjustment(m_CurPtr, alignment);
 
-				// TODO
 				return nullptr;
-
 			}
 
-			void StackAllocator::Deallocate(void* ptr)
+			void LinearAllocator::Deallocate(void* ptr)
 			{
-				// NOTHING
 			}
-			void StackAllocator::Reset()
+
+			void LinearAllocator::Reset()
 			{
-				m_CurPtr = m_StartPtr;
-				m_Allocations = 0;
 			}
+
+			
 		}
 	}
 }
