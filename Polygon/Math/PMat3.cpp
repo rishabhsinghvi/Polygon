@@ -182,6 +182,24 @@ namespace Polygon
 			return *this;
 		}
 
+		PMat3 PMat3::operator*(real_t scalar) const
+		{
+			return PMat3(
+				m_Data[0] * scalar,
+				m_Data[1] * scalar,
+				m_Data[2] * scalar,
+				
+				m_Data[3] * scalar,
+				m_Data[4] * scalar,
+				m_Data[5] * scalar,
+
+				m_Data[6] * scalar,
+				m_Data[7] * scalar,
+				m_Data[8] * scalar
+
+			);
+		}
+
 		PMat3 PMat3::operator/(real_t scalar) const
 		{
 			if (scalar == 0.0)
@@ -200,6 +218,43 @@ namespace Polygon
 				m_Data[7] / scalar,
 				m_Data[8] / scalar
 			);
+		}
+
+		PMat3& PMat3::operator*=(real_t scalar)
+		{
+			m_Data[0] *= scalar;
+			m_Data[1] *= scalar;
+			m_Data[2] *= scalar;
+
+			m_Data[3] *= scalar;
+			m_Data[4] *= scalar;
+			m_Data[5] *= scalar;
+
+			m_Data[6] *= scalar;
+			m_Data[7] *= scalar;
+			m_Data[8] *= scalar;
+
+			return *this;
+		}
+
+		PMat3& PMat3::operator/=(real_t scalar)
+		{
+			if (scalar == 0.0)
+				return *this;
+
+			m_Data[0] /= scalar;
+			m_Data[1] /= scalar;
+			m_Data[2] /= scalar;
+
+			m_Data[3] /= scalar;
+			m_Data[4] /= scalar;
+			m_Data[5] /= scalar;
+
+			m_Data[6] /= scalar;
+			m_Data[7] /= scalar;
+			m_Data[8] /= scalar;
+
+			return *this;
 		}
 
 		PMat3::real_t PMat3::GetDeterminant() const
@@ -269,14 +324,6 @@ namespace Polygon
 			return matrixCofactors / det;
 
 		}
-
-
-
-
-
-
-
-
 
 	}
 }

@@ -54,7 +54,11 @@ namespace Polygon
 			PMat3& operator-=(const PMat3& other);
 			PMat3& operator*=(const PMat3& other);
 
+			PMat3 operator*(real_t scalar) const;
 			PMat3 operator/(real_t scalar) const;
+
+			PMat3& operator*=(real_t scalar);
+			PMat3& operator/=(real_t scalar);
 
 			real_t GetDeterminant() const;
 			PMat3 GetTranspose() const;

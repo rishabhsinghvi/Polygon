@@ -30,6 +30,9 @@
     <ClCompile Include="Math\PMat3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Math\PQuaternion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\PAssertion.h">
@@ -291,6 +294,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Math\PMat3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\PQuaternion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Math.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\Body\PBody.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

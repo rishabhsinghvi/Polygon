@@ -23,6 +23,7 @@
     <ClCompile Include="Core\Memory\PLinearAllocator.cpp" />
     <ClCompile Include="Core\Memory\PStackAllocator.cpp" />
     <ClCompile Include="Math\PMat3.cpp" />
+    <ClCompile Include="Math\PQuaternion.cpp" />
     <ClCompile Include="Math\PVector3.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -108,9 +109,12 @@
     <ClInclude Include="Core\Memory\PLinearAllocator.h" />
     <ClInclude Include="Core\Memory\PStackAllocator.h" />
     <ClInclude Include="Core\PAssertion.h" />
+    <ClInclude Include="Math\Math.h" />
     <ClInclude Include="Math\PMat3.h" />
+    <ClInclude Include="Math\PQuaternion.h" />
     <ClInclude Include="Math\PVector2.h" />
     <ClInclude Include="Math\PVector3.h" />
+    <ClInclude Include="Physics\Body\PBody.h" />
     <ClInclude Include="Rendering\Platform\OpenGL\POpenGLShader.h" />
     <ClInclude Include="Rendering\PShader.h" />
   </ItemGroup>

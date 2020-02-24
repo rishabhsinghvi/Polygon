@@ -113,7 +113,7 @@ namespace Polygon
 			return PVector3(x / scalar, y / scalar, z / scalar);
 		}
 
-		PVector3::real_t PVector3::GetLength() const
+		real_t PVector3::GetLength() const
 		{
 			return ::sqrt(x * x + y * y + z * z);
 		}
@@ -138,10 +138,11 @@ namespace Polygon
 			return PVector3(x / length, y / length, z / length);
 		}
 
-		PVector3::real_t PVector3::Dot(const PVector3& first, const PVector3& second)
+		real_t PVector3::Dot(const PVector3& first, const PVector3& second)
 		{
 			return first.x * second.x + first.y * second.y + first.z * second.z;
 		}
+
 		PVector3 PVector3::Cross(const PVector3& first, const PVector3& second)
 		{
 			return PVector3(first.y * second.z - first.z * second.y,

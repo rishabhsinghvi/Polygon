@@ -8,11 +8,16 @@
 #endif //_WIN32 || _WIN64
 
 #if defined(BUILD_SYSTEM_WINDOWS)
-    #if defined(POLYGON_ENGINE_EXPORTS)
-        #define POLYGON_ENGINE_API __declspec(dllexport)
+    #if defined(POLYGON_ENGINE_BUILD_DLL)
+        #if defined(POLYGON_ENGINE_EXPORTS)
+            #define POLYGON_ENGINE_API __declspec(dllexport)
+        #else
+            #define POLYGON_ENGINE_API __declspec(dllimport)
+        #endif
     #else
-        #define POLYGON_ENGINE_API __declspec(dllimport)
+        #define POLYGON_ENGINE_API 
     #endif
+
 #endif // BUILD_SYSTEM_WINDOWS
 
 #endif // POLYGON_CORE_H
