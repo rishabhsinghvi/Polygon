@@ -2,6 +2,7 @@
 #define POLYGON_MAT3_H
 
 #include "Core/Core.h"
+#include "PMath.h"
 
 #include<array>
 #ifdef _DEBUG
@@ -18,11 +19,6 @@ namespace Polygon
 
 		class POLYGON_ENGINE_API PMat3
 		{
-#ifdef POLYGON_MATH_USE_DOUBLE
-			using real_t = double;
-#else
-			using real_t = float;
-#endif
 
 		private:
 			std::array<real_t, 9> m_Data;

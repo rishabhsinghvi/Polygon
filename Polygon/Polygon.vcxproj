@@ -22,6 +22,9 @@
     <ClCompile Include="Core\Memory\PAllocator.cpp" />
     <ClCompile Include="Core\Memory\PLinearAllocator.cpp" />
     <ClCompile Include="Core\Memory\PStackAllocator.cpp" />
+    <ClCompile Include="Core\PThreadPool.cpp" />
+    <ClCompile Include="Core\Window\PGLFWWindow.cpp" />
+    <ClCompile Include="Core\Window\PWindow.cpp" />
     <ClCompile Include="Math\PMat3.cpp" />
     <ClCompile Include="Math\PQuaternion.cpp" />
     <ClCompile Include="Math\PVector3.cpp" />
@@ -109,14 +112,19 @@
     <ClInclude Include="Core\Memory\PLinearAllocator.h" />
     <ClInclude Include="Core\Memory\PStackAllocator.h" />
     <ClInclude Include="Core\PAssertion.h" />
-    <ClInclude Include="Math\Math.h" />
+    <ClInclude Include="Core\PThreadPool.h" />
+    <ClInclude Include="Core\Window\PGLFWWindow.h" />
+    <ClInclude Include="Core\Window\PWindow.h" />
+    <ClInclude Include="Math\PMath.h" />
     <ClInclude Include="Math\PMat3.h" />
     <ClInclude Include="Math\PQuaternion.h" />
     <ClInclude Include="Math\PVector2.h" />
     <ClInclude Include="Math\PVector3.h" />
     <ClInclude Include="Physics\Body\PBody.h" />
+    <ClInclude Include="Physics\BoundingVolume\PPrimitiveBoundingVolumes.h" />
     <ClInclude Include="Rendering\Platform\OpenGL\POpenGLShader.h" />
     <ClInclude Include="Rendering\PShader.h" />
+    <ClInclude Include="Vendor\GLFW\glfw3.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Math\PVector2.cpp" />

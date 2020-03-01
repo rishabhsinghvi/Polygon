@@ -121,7 +121,7 @@ namespace Polygon
 
 
 
-		PVector2::real_t PVector2::GetLength() const
+		real_t PVector2::GetLength() const
 		{
 			return ::sqrt(x * x + y * y);
 		}
@@ -145,17 +145,20 @@ namespace Polygon
 			return PVector2(x / length, y / length);
 		}
 
-		PVector2::real_t PVector2::Dot(const PVector2& first, const PVector2& second)
+		real_t PVector2::Dot(const PVector2& first, const PVector2& second)
 		{
 			return first.x * second.x + first.y * second.y;
 		}
 
-		PVector2::real_t& PVector2::operator[](unsigned int val)
+		real_t& PVector2::operator[](unsigned int val)
 		{
 			switch (val)
 			{
-
+			case 0: return x; break;
+			case 1: return y; break;
+			default: return x;
 			}
+			
 		}
 
 

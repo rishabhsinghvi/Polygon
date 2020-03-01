@@ -33,6 +33,15 @@
     <ClCompile Include="Math\PQuaternion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Window\PWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Window\PGLFWWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\PThreadPool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\PAssertion.h">
@@ -299,10 +308,25 @@
     <ClInclude Include="Math\PQuaternion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Math\Math.h">
+    <ClInclude Include="Physics\Body\PBody.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Physics\Body\PBody.h">
+    <ClInclude Include="Math\PMath.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\BoundingVolume\PPrimitiveBoundingVolumes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Window\PWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Window\PGLFWWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vendor\GLFW\glfw3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\PThreadPool.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

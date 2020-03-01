@@ -2,6 +2,7 @@
 #define POLYGON_VECTOR2_H
 
 #include "Core/Core.h"
+#include "PMath.h"
 
 namespace Polygon
 {
@@ -9,12 +10,6 @@ namespace Polygon
 	{
 		struct POLYGON_ENGINE_API PVector2
 		{
-
-#ifdef POLYGON_MATH_USE_DOUBLE
-			using real_t = double;
-#else
-			using real_t = float;
-#endif
 
 			real_t x, y;
 

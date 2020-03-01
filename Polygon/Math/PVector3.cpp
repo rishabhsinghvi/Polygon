@@ -67,22 +67,22 @@ namespace Polygon
 			return *this;
 		}
 
-		PVector3 PVector3::operator+(const PVector3& other)
+		PVector3 PVector3::operator+(const PVector3& other) const
 		{
 			return PVector3(x + other.x, y + other.y, z + other.z);
 		}
 
-		PVector3 PVector3::operator-(const PVector3& other)
+		PVector3 PVector3::operator-(const PVector3& other) const
 		{
 			return PVector3(x - other.x, y - other.y, z - other.z);
 		}
 
-		PVector3 PVector3::operator*(const PVector3& other)
+		PVector3 PVector3::operator*(const PVector3& other) const
 		{
 			return PVector3(x * other.x, y * other.y, z * other.z);
 		}
 
-		PVector3 PVector3::operator/(const PVector3& other)
+		PVector3 PVector3::operator/(const PVector3& other) const
 		{
 			if (other.x == 0.0 || other.y == 0.0 || other.z == 0)
 				return *this;
@@ -90,22 +90,22 @@ namespace Polygon
 			return PVector3(x / other.x, y / other.y, z / other.z);
 		}
 
-		PVector3 PVector3::operator+(real_t scalar)
+		PVector3 PVector3::operator+(real_t scalar) const
 		{
 			return PVector3(x + scalar, y + scalar, z + scalar);
 		}
 
-		PVector3 PVector3::operator-(real_t scalar)
+		PVector3 PVector3::operator-(real_t scalar) const
 		{
 			return PVector3(x - scalar, y - scalar, z - scalar);
 		}
 
-		PVector3 PVector3::operator*(real_t scalar)
+		PVector3 PVector3::operator*(real_t scalar) const
 		{
 			return PVector3(x * scalar, y * scalar, z * scalar);
 		}
 
-		PVector3 PVector3::operator/(real_t scalar)
+		PVector3 PVector3::operator/(real_t scalar) const
 		{
 			if (scalar == 0.0)
 				return *this;

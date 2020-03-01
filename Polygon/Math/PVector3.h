@@ -2,7 +2,7 @@
 #define POLYGON_VECTOR3_H
 
 #include "Core/Core.h"
-#include "Math.h"
+#include "PMath.h"
 
 namespace Polygon
 {
@@ -27,15 +27,15 @@ namespace Polygon
 			PVector3& operator*=(const PVector3 & other);
 			PVector3& operator/=(const PVector3 & other);
 
-			PVector3 operator+(const PVector3 & other);
-			PVector3 operator-(const PVector3 & other);
-			PVector3 operator*(const PVector3 & other);
-			PVector3 operator/(const PVector3 & other);
+			PVector3 operator+(const PVector3 & other) const;
+			PVector3 operator-(const PVector3 & other) const;
+			PVector3 operator*(const PVector3 & other) const;
+			PVector3 operator/(const PVector3 & other) const;
 
-			PVector3 operator+(real_t scalar);
-			PVector3 operator-(real_t scalar);
-			PVector3 operator*(real_t scalar);
-			PVector3 operator/(real_t scalar);
+			PVector3 operator+(real_t scalar) const;
+			PVector3 operator-(real_t scalar) const;
+			PVector3 operator*(real_t scalar) const;
+			PVector3 operator/(real_t scalar) const;
 
 			real_t GetLength() const;
 

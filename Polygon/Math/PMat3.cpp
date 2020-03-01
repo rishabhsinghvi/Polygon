@@ -50,7 +50,7 @@ namespace Polygon
 			m_Data[8] = r8;
 		}
 		
-		PMat3::real_t& PMat3::At(unsigned int i, unsigned int j)
+		real_t& PMat3::At(unsigned int i, unsigned int j)
 		{
 			// TODO: Assertion!
 			return m_Data.at(i * 3 + j);
@@ -257,7 +257,7 @@ namespace Polygon
 			return *this;
 		}
 
-		PMat3::real_t PMat3::GetDeterminant() const
+		real_t PMat3::GetDeterminant() const
 		{
 			return m_Data[0] * (m_Data[4] * m_Data[8] - m_Data[5] * m_Data[7]) - m_Data[3] * (m_Data[8] * m_Data[1] - m_Data[2] * m_Data[7]) + m_Data[6] * (m_Data[5] * m_Data[1] - m_Data[2] * m_Data[4]);
 		}
