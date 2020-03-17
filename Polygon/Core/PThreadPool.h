@@ -37,7 +37,7 @@ namespace Polygon
 			template<typename Func, typename ... Args>
 			std::future<std::invoke_result_t<Func(Args...)>> SubmitTask(Func&& func, Args&& ... args)
 			{
-				using return_type = typename std::invoke_result_t(Func(Args)...);
+				using return_type = typename std::invoke_result_t(Func(Args...);
 
 				auto task = std::make_shared< std::packaged_task<return_type()> >(
 					std::bind(std::forward<Func>(func), std::forward<Args>(args)...)
