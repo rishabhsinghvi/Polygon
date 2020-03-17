@@ -34,26 +34,20 @@ namespace Polygon
 
 			~PThreadPool();
 
-			template<typename Func, typename ... Args>
-			std::future<std::invoke_result_t<Func(Args...)>> SubmitTask(Func&& func, Args&& ... args)
-			{
-				using return_type = typename std::invoke_result_t(Func(Args...);
-
-				auto task = std::make_shared< std::packaged_task<return_type()> >(
-					std::bind(std::forward<Func>(func), std::forward<Args>(args)...)
-					);
-
-				{
-					std::unique_lock<std::mutex> lock(m_TaskAccessMutex);
-
-					if (m_Running)
-					{
-						m_Tasks.emplace([task]() { (*task)(); });
-					}
-				}
-
+			template<typename Func, typename...Args>
+			auto SubmitTask(Func&& func, Args&&... args) -> std::future<decltype(f(args...))> {
+				
+				std::function<decltype(func(args...))()> funcWrapper = std::bind(std::forward<Func>(func), std::forward<Args>(args)...);
+				
+				auto task = std::make_shared<std::packaged_task<decltype(func(args...))()>>(funcWrapper);
+				std::function<void()> taskToEnqueue = [task]() {
+					(*task)();
+				};
+				
+				m_Tasks.push(taskToEnqueue);
 				m_WaitConditional.notify_one();
-				return task->get_future();
+
+				return taskToEnqueue->get_future();
 			}
 
 		};
