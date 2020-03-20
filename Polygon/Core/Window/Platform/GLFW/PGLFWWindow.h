@@ -4,7 +4,7 @@
 #include "Vendor/GLFW/glfw3.h"
 
 #include "Core/Core.h"
-#include "PWindow.h"
+#include "Core/Window/PWindow.h"
 
 namespace Polygon
 {
@@ -15,7 +15,7 @@ namespace Polygon
 			class POLYGON_ENGINE_API PGLFWWindow : public PWindow
 			{
 			private:
-				GLFWwindow* m_WindowHandle;
+				GLFWwindow* m_WindowHandle = nullptr;
 
 			public:
 
