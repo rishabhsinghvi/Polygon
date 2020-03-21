@@ -11,7 +11,7 @@ namespace Polygon
 
 		}
 
-		PRay::PRay(real_t orX, real_t orY, real_t orZ, real_t dirX, real_t dirY, real_t dirz):
+		PRay::PRay(real_t orX, real_t orY, real_t orZ, real_t dirX, real_t dirY, real_t dirZ):
 			m_Origin(PVector3(orX, orY, orZ)), m_Dir(PVector3(dirX, dirY, dirZ))
 		{
 		}
