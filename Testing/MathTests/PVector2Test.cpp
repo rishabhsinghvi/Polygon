@@ -2,7 +2,7 @@
 
 #include "Math/PVector2.h"
 
-using namespace Polygon::Math;
+using namespace PolygonEngine::Math;
 
 constexpr float EPSILON = 1e-10;
 

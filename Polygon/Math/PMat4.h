@@ -23,6 +23,8 @@ namespace PolygonEngine
 		private:
 			std::array<PReal, 16> m_Data;
 
+			PMat4(const std::array<PReal, 16>& arr) noexcept;
+
 		public:
 
 			// Default constructor constructs an identity matrix 
@@ -31,6 +33,7 @@ namespace PolygonEngine
 			PMat4(const PMat4& other) noexcept;
 
 			explicit PMat4(PMat4&& other) noexcept;
+
 
 			~PMat4() = default;
 

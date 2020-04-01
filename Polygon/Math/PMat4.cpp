@@ -21,6 +21,11 @@ namespace PolygonEngine
 		{
 		}
 
+		PMat4::PMat4(const std::array<PReal, 16>& arr) noexcept:
+			m_Data(std::move(arr))
+		{
+		}
+
 		PMat4::PMat4(PReal r0, PReal r1, PReal r2, PReal r3, PReal r4, PReal r5, PReal r6, PReal r7, PReal r8, PReal r9, PReal r10, PReal r11, PReal r12, PReal r13, PReal r14, PReal r15) noexcept:
 			m_Data{ r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15}
 		{
@@ -33,7 +38,14 @@ namespace PolygonEngine
 
 		PMat4& PMat4::operator=(const PMat4& other)
 		{
-			m_Data[0] = other.m_Data[0];
+			for (auto i = 0; i < 16; i++)
+			{
+				m_Data[i] = other.m_Data[i];
+			}
+
+			return *this;
+
+			/*m_Data[0] = other.m_Data[0];
 			m_Data[1] = other.m_Data[1];
 			m_Data[2] = other.m_Data[2];
 			m_Data[3] = other.m_Data[3];
@@ -53,7 +65,7 @@ namespace PolygonEngine
 			m_Data[14] = other.m_Data[14];
 			m_Data[15] = other.m_Data[15];
 
-			return *this;
+			return *this;*/
 		}
 
 		bool PMat4::operator==(const PMat4& other) const
@@ -63,7 +75,16 @@ namespace PolygonEngine
 
 		PMat4 PMat4::operator+(const PMat4& other) const
 		{
-			return PMat4(
+			std::array<PReal, 16> temp;
+
+			for (auto i = 0; i < 16; i++)
+			{
+				temp[i] = m_Data[i] + other.m_Data[i];
+			}
+
+			return PMat4(temp);
+
+			/*return PMat4(
 				m_Data[0] + other.m_Data[0],
 				m_Data[1] + other.m_Data[1],
 				m_Data[2] + other.m_Data[2],
@@ -83,12 +104,20 @@ namespace PolygonEngine
 				m_Data[13] + other.m_Data[13],
 				m_Data[14] + other.m_Data[14],
 				m_Data[15] + other.m_Data[15]
-			);
+			);*/
 		}
 
 		PMat4 PMat4::operator-(const PMat4& other) const
 		{
-			return PMat4(m_Data[0] + other.m_Data[0],
+			std::array<PReal, 16> temp;
+
+			for (auto i = 0; i < 16; i++)
+			{
+				temp[i] = m_Data[i] - other.m_Data[i];
+			}
+
+			return PMat4(temp);
+			/*return PMat4(m_Data[0] + other.m_Data[0],
 				m_Data[1] - other.m_Data[1],
 				m_Data[2] - other.m_Data[2],
 				m_Data[3] - other.m_Data[3],
@@ -107,7 +136,7 @@ namespace PolygonEngine
 				m_Data[13] - other.m_Data[13],
 				m_Data[14] - other.m_Data[14],
 				m_Data[15] - other.m_Data[15]
-			);
+			);*/
 		}
 
 		PMat4 PMat4::operator*(const PMat4& other) const
@@ -138,29 +167,40 @@ namespace PolygonEngine
 
 		PMat4& PMat4::operator+=(const PMat4& other)
 		{
-			m_Data[0] += other.m_Data[0];
-			m_Data[1] += other.m_Data[1];
-			m_Data[2] += other.m_Data[2];
-			m_Data[3] += other.m_Data[3];
-			m_Data[4] += other.m_Data[4];
-			m_Data[5] += other.m_Data[5];
-			m_Data[6] += other.m_Data[6];
-			m_Data[7] += other.m_Data[7];
-			m_Data[8] += other.m_Data[8];
-			m_Data[9] += other.m_Data[9];
-			m_Data[10] += other.m_Data[10];
-			m_Data[11] += other.m_Data[11];
-			m_Data[12] += other.m_Data[12];
-			m_Data[13] += other.m_Data[13];
-			m_Data[14] += other.m_Data[14];
-			m_Data[15] += other.m_Data[15];
+			for (auto i = 0; i < 16; i++)
+			{
+				m_Data[i] += other.m_Data[i];
+			}
+
+			//m_Data[0] += other.m_Data[0];
+			//m_Data[1] += other.m_Data[1];
+			//m_Data[2] += other.m_Data[2];
+			//m_Data[3] += other.m_Data[3];
+			//m_Data[4] += other.m_Data[4];
+			//m_Data[5] += other.m_Data[5];
+			//m_Data[6] += other.m_Data[6];
+			//m_Data[7] += other.m_Data[7];
+			//m_Data[8] += other.m_Data[8];
+			//m_Data[9] += other.m_Data[9];
+			//m_Data[10] += other.m_Data[10];
+			//m_Data[11] += other.m_Data[11];
+			//m_Data[12] += other.m_Data[12];
+			//m_Data[13] += other.m_Data[13];
+			//m_Data[14] += other.m_Data[14];
+			//m_Data[15] += other.m_Data[15];
 
 			return *this;
 		}
 
 		PMat4& PMat4::operator-=(const PMat4& other)
 		{
-			m_Data[0] -= other.m_Data[0];
+			for (auto i = 0; i < 16; i++)
+			{
+				m_Data[i] -= other.m_Data[i];
+			}
+
+
+			/*m_Data[0] -= other.m_Data[0];
 			m_Data[1] -= other.m_Data[1];
 			m_Data[2] -= other.m_Data[2];
 			m_Data[3] -= other.m_Data[3];
@@ -175,7 +215,7 @@ namespace PolygonEngine
 			m_Data[12] -= other.m_Data[12];
 			m_Data[13] -= other.m_Data[13];
 			m_Data[14] -= other.m_Data[14];
-			m_Data[15] -= other.m_Data[15];
+			m_Data[15] -= other.m_Data[15];*/
 
 			return *this;
 		}
@@ -228,7 +268,14 @@ namespace PolygonEngine
 
 		PMat4 PMat4::operator*(PReal scalar) const
 		{
-			return PMat4(
+			std::array<PReal, 16> temp;
+			for (auto i = 0; i < 16; i++)
+			{
+				temp[i] = m_Data[i] * scalar;
+			}
+			return PMat4(temp);
+
+			/*return PMat4(
 			m_Data[0] * scalar,
 			m_Data[1] * scalar,
 			m_Data[2] * scalar,
@@ -245,7 +292,7 @@ namespace PolygonEngine
 			m_Data[13] * scalar,
 			m_Data[14] * scalar,
 			m_Data[15] * scalar
-			);
+			);*/
 		}
 
 		PMat4 PMat4::operator/(PReal scalar) const
@@ -253,24 +300,34 @@ namespace PolygonEngine
 			if (scalar == 0.0)
 				return *this;
 
-			return PMat4(
-				m_Data[0] / scalar,
-				m_Data[1] / scalar,
-				m_Data[2] / scalar,
-				m_Data[3] / scalar,
-				m_Data[4] / scalar,
-				m_Data[5] / scalar,
-				m_Data[6] / scalar,
-				m_Data[7] / scalar,
-				m_Data[8] / scalar,
-				m_Data[9] / scalar,
-				m_Data[10] / scalar,
-				m_Data[11] / scalar,
-				m_Data[12] / scalar,
-				m_Data[13] / scalar,
-				m_Data[14] / scalar,
-				m_Data[15] / scalar
-			);
+			std::array<PReal, 16> temp;
+
+			for (auto i = 0; i < 16; i++)
+			{
+				temp[i] = m_Data[i] / scalar;
+			}
+
+			return PMat4(temp);
+
+
+			//return PMat4(
+			//	m_Data[0] / scalar,
+			//	m_Data[1] / scalar,
+			//	m_Data[2] / scalar,
+			//	m_Data[3] / scalar,
+			//	m_Data[4] / scalar,
+			//	m_Data[5] / scalar,
+			//	m_Data[6] / scalar,
+			//	m_Data[7] / scalar,
+			//	m_Data[8] / scalar,
+			//	m_Data[9] / scalar,
+			//	m_Data[10] / scalar,
+			//	m_Data[11] / scalar,
+			//	m_Data[12] / scalar,
+			//	m_Data[13] / scalar,
+			//	m_Data[14] / scalar,
+			//	m_Data[15] / scalar
+			//);
 		}
 
 		PMat4& PMat4::operator*=(PReal scalar)
