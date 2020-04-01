@@ -2,11 +2,11 @@
 
 #include<cmath>
 
-namespace Polygon
+namespace PolygonEngine
 {
 	namespace Math
 	{
-		PVector3::PVector3(real_t x, real_t y, real_t z) noexcept:
+		PVector3::PVector3(PReal x, PReal y, PReal z) noexcept:
 			x(x), y(y), z(z)
 		{
 		}
@@ -90,22 +90,22 @@ namespace Polygon
 			return PVector3(x / other.x, y / other.y, z / other.z);
 		}
 
-		PVector3 PVector3::operator+(real_t scalar) const
+		PVector3 PVector3::operator+(PReal scalar) const
 		{
 			return PVector3(x + scalar, y + scalar, z + scalar);
 		}
 
-		PVector3 PVector3::operator-(real_t scalar) const
+		PVector3 PVector3::operator-(PReal scalar) const
 		{
 			return PVector3(x - scalar, y - scalar, z - scalar);
 		}
 
-		PVector3 PVector3::operator*(real_t scalar) const
+		PVector3 PVector3::operator*(PReal scalar) const
 		{
 			return PVector3(x * scalar, y * scalar, z * scalar);
 		}
 
-		PVector3 PVector3::operator/(real_t scalar) const
+		PVector3 PVector3::operator/(PReal scalar) const
 		{
 			if (scalar == 0.0)
 				return *this;
@@ -113,7 +113,7 @@ namespace Polygon
 			return PVector3(x / scalar, y / scalar, z / scalar);
 		}
 
-		real_t PVector3::GetLength() const
+		PReal PVector3::GetLength() const
 		{
 			return ::sqrt(x * x + y * y + z * z);
 		}
@@ -138,7 +138,7 @@ namespace Polygon
 			return PVector3(x / length, y / length, z / length);
 		}
 
-		real_t PVector3::Dot(const PVector3& first, const PVector3& second)
+		PReal PVector3::Dot(const PVector3& first, const PVector3& second)
 		{
 			return first.x * second.x + first.y * second.y + first.z * second.z;
 		}

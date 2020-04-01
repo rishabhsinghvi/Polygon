@@ -9,7 +9,7 @@
 #include<iostream>
 #endif
 
-namespace Polygon
+namespace PolygonEngine
 {
 	namespace Math
 	{
@@ -21,7 +21,7 @@ namespace Polygon
 		{
 
 		private:
-			std::array<real_t, 9> m_Data;
+			std::array<PReal, 9> m_Data;
 
 		public:
 
@@ -34,9 +34,9 @@ namespace Polygon
 
 			~PMat3() = default;
 
-			explicit PMat3(real_t r0, real_t r1, real_t r2, real_t r3, real_t r4, real_t r5, real_t r6, real_t r7, real_t r8) noexcept;
+			explicit PMat3(PReal r0, PReal r1, PReal r2, PReal r3, PReal r4, PReal r5, PReal r6, PReal r7, PReal r8) noexcept;
 
-			real_t& At(unsigned int i, unsigned int j);
+			PReal& At(unsigned int i, unsigned int j);
 
 			PMat3& operator=(const PMat3& other);
 
@@ -50,13 +50,15 @@ namespace Polygon
 			PMat3& operator-=(const PMat3& other);
 			PMat3& operator*=(const PMat3& other);
 
-			PMat3 operator*(real_t scalar) const;
-			PMat3 operator/(real_t scalar) const;
+			PMat3 operator*(PReal scalar) const;
+			PMat3 operator/(PReal scalar) const;
 
-			PMat3& operator*=(real_t scalar);
-			PMat3& operator/=(real_t scalar);
+			PMat3& operator*=(PReal scalar);
+			PMat3& operator/=(PReal scalar);
 
-			real_t GetDeterminant() const;
+			const PReal* Data() const;
+
+			PReal GetDeterminant() const;
 			PMat3 GetTranspose() const;
 			PMat3 GetMinor() const;
 			PMat3 GetCofactorsMatrix() const;

@@ -5,17 +5,17 @@
 
 #include<limits>
 
-namespace Polygon
+namespace PolygonEngine
 {
 	namespace Math
 	{
-		constexpr real_t P_PI = static_cast<real_t>(3.14159265358979);
-		constexpr real_t P_GOLD_RATIO = static_cast<real_t>(1.6180339887498);
-		constexpr real_t P_INFINITY = std::numeric_limits<real_t>::infinity();
-		constexpr real_t P_MAX = std::numeric_limits<real_t>::max();
-		constexpr real_t P_MIN = std::numeric_limits<real_t>::min();
-		constexpr real_t P_NEG_INFINITY = -P_INFINITY;
-		constexpr real_t P_EULER = static_cast<real_t>(2.71828182845);
+		constexpr PReal P_PI = static_cast<PReal>(3.14159265358979);
+		constexpr PReal P_GOLD_RATIO = static_cast<PReal>(1.6180339887498);
+		constexpr PReal P_INFINITY = std::numeric_limits<PReal>::infinity();
+		constexpr PReal P_MAX = std::numeric_limits<PReal>::max();
+		constexpr PReal P_MIN = std::numeric_limits<PReal>::min();
+		constexpr PReal P_NEG_INFINITY = -P_INFINITY;
+		constexpr PReal P_EULER = static_cast<PReal>(2.71828182845);
 
 
 	}

@@ -4,7 +4,7 @@
 #include "Core/Core.h"
 #include "Core/PTypes.h"
 
-namespace Polygon
+namespace PolygonEngine
 {
 	namespace Rendering
 	{
@@ -29,7 +29,7 @@ namespace Polygon
 
 			PRenderContext(PRenderPlatform platform);
 
-			virtual void SetupRenderContext() = 0;
+			virtual void SetupRenderContext(void* windowHandle) = 0;
 
 			PRenderPlatform GetRenderPlatform() const;
 

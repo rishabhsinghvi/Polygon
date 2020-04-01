@@ -1,6 +1,6 @@
 #include "PMat3.h"
 
-namespace Polygon
+namespace PolygonEngine
 {
 	namespace Math
 	{
@@ -37,7 +37,7 @@ namespace Polygon
 
 		}
 
-		PMat3::PMat3(real_t r0, real_t r1, real_t r2, real_t r3, real_t r4, real_t r5, real_t r6, real_t r7, real_t r8) noexcept
+		PMat3::PMat3(PReal r0, PReal r1, PReal r2, PReal r3, PReal r4, PReal r5, PReal r6, PReal r7, PReal r8) noexcept
 		{
 			m_Data[0] = r0;
 			m_Data[1] = r1;
@@ -50,7 +50,7 @@ namespace Polygon
 			m_Data[8] = r8;
 		}
 		
-		real_t& PMat3::At(unsigned int i, unsigned int j)
+		PReal& PMat3::At(unsigned int i, unsigned int j)
 		{
 			// TODO: Assertion!
 			return m_Data.at(i * 3 + j);
@@ -182,7 +182,7 @@ namespace Polygon
 			return *this;
 		}
 
-		PMat3 PMat3::operator*(real_t scalar) const
+		PMat3 PMat3::operator*(PReal scalar) const
 		{
 			return PMat3(
 				m_Data[0] * scalar,
@@ -200,7 +200,7 @@ namespace Polygon
 			);
 		}
 
-		PMat3 PMat3::operator/(real_t scalar) const
+		PMat3 PMat3::operator/(PReal scalar) const
 		{
 			if (scalar == 0.0)
 				return *this;
@@ -220,7 +220,7 @@ namespace Polygon
 			);
 		}
 
-		PMat3& PMat3::operator*=(real_t scalar)
+		PMat3& PMat3::operator*=(PReal scalar)
 		{
 			m_Data[0] *= scalar;
 			m_Data[1] *= scalar;
@@ -237,7 +237,7 @@ namespace Polygon
 			return *this;
 		}
 
-		PMat3& PMat3::operator/=(real_t scalar)
+		PMat3& PMat3::operator/=(PReal scalar)
 		{
 			if (scalar == 0.0)
 				return *this;
@@ -257,7 +257,12 @@ namespace Polygon
 			return *this;
 		}
 
-		real_t PMat3::GetDeterminant() const
+		const PReal* PMat3::Data() const
+		{
+			return m_Data.data();
+		}
+
+		PReal PMat3::GetDeterminant() const
 		{
 			return m_Data[0] * (m_Data[4] * m_Data[8] - m_Data[5] * m_Data[7]) - m_Data[3] * (m_Data[8] * m_Data[1] - m_Data[2] * m_Data[7]) + m_Data[6] * (m_Data[5] * m_Data[1] - m_Data[2] * m_Data[4]);
 		}
@@ -300,15 +305,15 @@ namespace Polygon
 		{
 			return PMat3(
 				m_Data[8] * m_Data[4] - m_Data[5] * m_Data[7],
-				static_cast<real_t>(-1.0) * (m_Data[8] * m_Data[3] - m_Data[5] * m_Data[6]),
+				static_cast<PReal>(-1.0) * (m_Data[8] * m_Data[3] - m_Data[5] * m_Data[6]),
 				m_Data[7] * m_Data[3] - m_Data[4] * m_Data[6],
 
-				static_cast<real_t>(-1.0)* (m_Data[8] * m_Data[1] - m_Data[2] * m_Data[7]),
+				static_cast<PReal>(-1.0)* (m_Data[8] * m_Data[1] - m_Data[2] * m_Data[7]),
 				m_Data[8] * m_Data[0] - m_Data[2] * m_Data[6],
-				static_cast<real_t>(-1.0)* (m_Data[7] * m_Data[0] - m_Data[1] * m_Data[6]),
+				static_cast<PReal>(-1.0)* (m_Data[7] * m_Data[0] - m_Data[1] * m_Data[6]),
 
 				m_Data[5] * m_Data[1] - m_Data[2] * m_Data[4],
-				static_cast<real_t>(-1.0)* (m_Data[5] * m_Data[0] - m_Data[2] * m_Data[3]),
+				static_cast<PReal>(-1.0)* (m_Data[5] * m_Data[0] - m_Data[2] * m_Data[3]),
 				m_Data[4] * m_Data[0] - m_Data[1] * m_Data[3]
 			);
 		}

@@ -4,20 +4,20 @@
 #include "Core/Core.h"
 #include "PMath.h"
 
-namespace Polygon
+namespace PolygonEngine
 {
 	namespace Math
 	{
 		struct POLYGON_ENGINE_API PVector2
 		{
 
-			real_t x, y;
+			PReal x, y;
 
 		public:
 
 			explicit PVector2() noexcept;
 
-			explicit PVector2(real_t x, real_t y) noexcept;
+			explicit PVector2(PReal x, PReal y) noexcept;
 
 			PVector2(const PVector2& other) noexcept;
 
@@ -33,20 +33,20 @@ namespace Polygon
 			PVector2 operator*(const PVector2& other);
 			PVector2 operator/(const PVector2& other);
 
-			PVector2 operator+(real_t scalar);
-			PVector2 operator-(real_t scalar);
-			PVector2 operator*(real_t scalar);
-			PVector2 operator/(real_t scalar);
+			PVector2 operator+(PReal scalar);
+			PVector2 operator-(PReal scalar);
+			PVector2 operator*(PReal scalar);
+			PVector2 operator/(PReal scalar);
 
-			real_t GetLength() const;
+			PReal GetLength() const;
 
 			void Normalize();
 			PVector2 GetNormalized() const;
 
-			static real_t Dot(const PVector2& first, const PVector2& second);
+			static PReal Dot(const PVector2& first, const PVector2& second);
 
 			
-			real_t& operator[](unsigned int val);
+			PReal& operator[](unsigned int val);
 
 
 		};

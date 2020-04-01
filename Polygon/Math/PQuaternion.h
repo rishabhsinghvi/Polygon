@@ -5,7 +5,7 @@
 #include "Math.h"
 #include "Math/PVector3.h"
 
-namespace Polygon
+namespace PolygonEngine
 {
 	namespace Math
 	{
@@ -14,7 +14,7 @@ namespace Polygon
 }
 
 
-namespace Polygon
+namespace PolygonEngine
 {
 	namespace Math
 	{
@@ -22,16 +22,16 @@ namespace Polygon
 		{
 
 			PVector3 vec;
-			real_t w;
+			PReal w;
 
 			// The default constructor constructs a quaternion with x = 0, y = 0, z = 0, w = 1
 			PQuaternion() noexcept;
 
 			PQuaternion(const PQuaternion& other) noexcept;
 
-			PQuaternion(real_t x, real_t y, real_t z, real_t w) noexcept;
+			PQuaternion(PReal x, PReal y, PReal z, PReal w) noexcept;
 
-			PQuaternion(const PVector3& vec, real_t scalar) noexcept;
+			PQuaternion(const PVector3& vec, PReal scalar) noexcept;
 
 			PQuaternion(const PMat3& mat);
 			
@@ -41,11 +41,11 @@ namespace Polygon
 			PQuaternion& operator+=(const PQuaternion& other);
 			PQuaternion& operator-=(const PQuaternion& other);
 
-			PQuaternion operator/(real_t scalar) const;
+			PQuaternion operator/(PReal scalar) const;
 
 
-			real_t GetLength() const;
-			real_t GetLengthSquared() const;
+			PReal GetLength() const;
+			PReal GetLengthSquared() const;
 
 			PQuaternion GetInverse() const;
 

@@ -2,7 +2,7 @@
 
 #include<cmath>
 
-namespace Polygon
+namespace PolygonEngine
 {
 	namespace Math
 	{
@@ -11,7 +11,7 @@ namespace Polygon
 		{
 		}
 
-		PVector2::PVector2(real_t x, real_t y):
+		PVector2::PVector2(PReal x, PReal y):
 			x(x), y(y)
 		{
 			
@@ -92,22 +92,22 @@ namespace Polygon
 			return PVector2(x / other.x, y / other.y);
 		}
 
-		PVector2 PVector2::operator+(real_t scalar)
+		PVector2 PVector2::operator+(PReal scalar)
 		{
 			return PVector2(x + scalar, y + scalar);
 		}
 
-		PVector2 PVector2::operator-(real_t scalar)
+		PVector2 PVector2::operator-(PReal scalar)
 		{
 			return PVector2(x - scalar, y - scalar);
 		}
 
-		PVector2 PVector2::operator*(real_t scalar)
+		PVector2 PVector2::operator*(PReal scalar)
 		{
 			return PVector2(x * scalar, y * scalar);
 		}
 
-		PVector2 PVector2::operator/(real_t scalar)
+		PVector2 PVector2::operator/(PReal scalar)
 		{
 			if (scalar == 0.0)
 				return *this;
@@ -121,7 +121,7 @@ namespace Polygon
 
 
 
-		real_t PVector2::GetLength() const
+		PReal PVector2::GetLength() const
 		{
 			return ::sqrt(x * x + y * y);
 		}
@@ -145,12 +145,12 @@ namespace Polygon
 			return PVector2(x / length, y / length);
 		}
 
-		real_t PVector2::Dot(const PVector2& first, const PVector2& second)
+		PReal PVector2::Dot(const PVector2& first, const PVector2& second)
 		{
 			return first.x * second.x + first.y * second.y;
 		}
 
-		real_t& PVector2::operator[](unsigned int val)
+		PReal& PVector2::operator[](unsigned int val)
 		{
 			switch (val)
 			{

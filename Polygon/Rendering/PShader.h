@@ -6,7 +6,7 @@
 #include<string>
 #include<cstdint>
 
-namespace Polygon
+namespace PolygonEngine
 {
 	namespace Rendering
 	{

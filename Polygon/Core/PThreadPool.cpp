@@ -1,6 +1,6 @@
 #include "PThreadPool.h"
 
-namespace Polygon
+namespace PolygonEngine
 {
 	namespace Core
 	{

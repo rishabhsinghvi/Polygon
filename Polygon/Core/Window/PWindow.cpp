@@ -1,6 +1,6 @@
 #include "PWindow.h"
 
-namespace Polygon
+namespace PolygonEngine
 {
 	namespace Core
 	{

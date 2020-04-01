@@ -9,7 +9,7 @@
 #include<functional>
 #include<type_traits>
 
-namespace Polygon
+namespace PolygonEngine
 {
 	namespace Core
 	{

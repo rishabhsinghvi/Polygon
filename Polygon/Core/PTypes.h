@@ -3,9 +3,10 @@
 
 #include<string>
 #include<memory>
-#include<cstdint>.
+#include<cstdint>
+#include<vector>
 
-namespace Polygon
+namespace PolygonEngine
 {
 	
 	/*
@@ -24,6 +25,9 @@ namespace Polygon
 	using PSharePtr = std::shared_ptr<T>;
 
 	using PUInt8 = uint8_t;
+
+	template<typename T>
+	using PDynArray = std::vector<T>;
 
 }
 

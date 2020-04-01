@@ -3,7 +3,7 @@
 
 #include "Math/PVector3.h"
 
-namespace Polygon
+namespace PolygonEngine
 {
 	using BodyID = unsigned int;
 	namespace Physics

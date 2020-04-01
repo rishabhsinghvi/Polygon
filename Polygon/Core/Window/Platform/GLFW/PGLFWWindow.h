@@ -6,7 +6,7 @@
 #include "Core/Core.h"
 #include "Core/Window/PWindow.h"
 
-namespace Polygon
+namespace PolygonEngine
 {
 	namespace Core
 	{

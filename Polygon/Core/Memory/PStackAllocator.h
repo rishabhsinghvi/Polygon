@@ -3,7 +3,7 @@
 
 #include "Core/Memory/PAllocator.h"
 
-namespace Polygon
+namespace PolygonEngine
 {
 	namespace Core
 	{

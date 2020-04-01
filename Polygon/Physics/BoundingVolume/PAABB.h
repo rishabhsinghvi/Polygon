@@ -4,13 +4,14 @@
 #include "Core/Core.h"
 #include "Math/PVector3.h"
 
-namespace Polygon
+namespace PolygonEngine
 {
 	namespace Physics
 	{
-		using namespace Polygon::Math;
+		using namespace PolygonEngine::Math;
 
-		class POLYGON_ENGINE_API AABB
+
+		class POLYGON_ENGINE_API PAABB
 		{
 		private:
 			PVector3 m_Min;
@@ -18,9 +19,10 @@ namespace Polygon
 
 		public:
 
-			AABB() = default;
+			PAABB() = default;
 
-			AABB(const PVector3& min, const PVector3& max);
+			PAABB(const PVector3& min, const PVector3& max);
+
 
 
 		};

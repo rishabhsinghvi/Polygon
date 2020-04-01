@@ -4,7 +4,7 @@
 #include "Core/Core.h"
 #include "Math/PVector3.h"
 
-namespace Polygon
+namespace PolygonEngine
 {
 	namespace Math
 	{
@@ -12,15 +12,15 @@ namespace Polygon
 		{
 		private:
 			PVector3 m_Normal;
-			real_t m_Dist;
+			PReal m_Dist;
 
 		public:
 
 			PPlane() = default; 
 
-			PPlane(PVector3 normal, real_t distance);
+			PPlane(PVector3 normal, PReal distance);
 
-			PPlane(real_t nX, real_t nY, real_t nZ, real_t distance);
+			PPlane(PReal nX, PReal nY, PReal nZ, PReal distance);
 
 			PPlane(const PPlane& other);
 

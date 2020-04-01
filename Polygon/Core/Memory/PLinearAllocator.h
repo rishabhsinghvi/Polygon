@@ -4,7 +4,7 @@
 #include "Core/Core.h"
 #include "PAllocator.h"
 
-namespace Polygon
+namespace PolygonEngine
 {
 	namespace Core
 	{

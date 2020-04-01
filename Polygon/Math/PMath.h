@@ -2,9 +2,9 @@
 #define POLYGON_MATH_H
 
 #ifdef POLYGON_MATH_USE_DOUBLE
-using real_t = double;
+using PReal = double;
 #else
-using real_t = float;
+using PReal = float;
 #endif
 
 #endif

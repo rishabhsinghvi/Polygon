@@ -4,11 +4,11 @@
 #include "Core/Core.h"
 #include "Math/PVector3.h"
 
-namespace Polygon
+namespace PolygonEngine
 {
 	namespace Physics
 	{
-		using namespace Polygon::Math;
+		using namespace PolygonEngine::Math;
 		class POLYGON_ENGINE_API PRay
 		{
 		private:
@@ -21,7 +21,7 @@ namespace Polygon
 
 			PRay(PVector3& origin, PVector3& dir);
 
-			PRay(real_t orX, real_t orY, real_t orZ, real_t dirX, real_t dirY, real_t dirz);
+			PRay(PReal orX, PReal orY, PReal orZ, PReal dirX, PReal dirY, PReal dirz);
 
 			PRay(const PRay& other);
 

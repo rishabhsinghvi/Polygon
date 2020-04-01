@@ -4,7 +4,7 @@
 #include "Core/Core.h"
 #include "Rendering/PShader.h"
 
-namespace Polygon
+namespace PolygonEngine
 {
 	namespace Rendering
 	{

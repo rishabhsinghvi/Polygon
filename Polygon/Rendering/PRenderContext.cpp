@@ -1,7 +1,7 @@
 #include "PRenderContext.h"
 #include "Platform/OpenGL/POpenGLRenderContext.h"
 
-namespace Polygon
+namespace PolygonEngine
 {
 	namespace Rendering
 	{
@@ -33,7 +33,7 @@ namespace Polygon
 				return std::make_unique<POpenGLRenderContext>(PRenderPlatform::OpenGL);
 
 			// Add more later
-			default: 
+			default: break;
 				// ASSERT(false)
 			}
 		}

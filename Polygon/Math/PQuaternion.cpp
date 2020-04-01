@@ -3,7 +3,7 @@
 
 #include<cmath>
 
-namespace Polygon
+namespace PolygonEngine
 {
 	namespace Math
 	{
@@ -21,13 +21,13 @@ namespace Polygon
 			vec.z = other.vec.z;
 		}
 
-		PQuaternion::PQuaternion(real_t x, real_t y, real_t z, real_t w) noexcept:
+		PQuaternion::PQuaternion(PReal x, PReal y, PReal z, PReal w) noexcept:
 			vec(std::move(PVector3(x, y, z))), w(w)
 		{
 
 		}
 
-		PQuaternion::PQuaternion(const PVector3& vec, real_t scalar) noexcept:
+		PQuaternion::PQuaternion(const PVector3& vec, PReal scalar) noexcept:
 			vec(vec), w(scalar)
 		{
 
@@ -68,7 +68,7 @@ namespace Polygon
 			return *this;
 		}
 
-		PQuaternion PQuaternion::operator/(real_t scalar) const
+		PQuaternion PQuaternion::operator/(PReal scalar) const
 		{
 			if (scalar == 0.0)
 				return *this;
@@ -76,19 +76,19 @@ namespace Polygon
 			return PQuaternion(vec / scalar, w / scalar);
 		}
 
-		real_t PQuaternion::GetLength() const
+		PReal PQuaternion::GetLength() const
 		{
 			return ::sqrt(GetLengthSquared());
 		}
 
-		real_t PQuaternion::GetLengthSquared() const
+		PReal PQuaternion::GetLengthSquared() const
 		{
 			return vec.x * vec.x + vec.y * vec.y + vec.z * vec.z + w * w;
 		}
 
 		PQuaternion PQuaternion::GetInverse() const
 		{
-			return PQuaternion(vec * static_cast<real_t>(-1.0), w) / GetLengthSquared();
+			return PQuaternion(vec * static_cast<PReal>(-1.0), w) / GetLengthSquared();
 		}
 
 

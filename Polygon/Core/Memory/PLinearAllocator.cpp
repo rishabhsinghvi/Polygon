@@ -1,6 +1,6 @@
 #include "PLinearAllocator.h"
 
-namespace Polygon
+namespace PolygonEngine
 {
 	namespace Core
 	{

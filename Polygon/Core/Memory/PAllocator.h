@@ -5,7 +5,7 @@
 
 #include <cstdlib>
 
-namespace Polygon
+namespace PolygonEngine
 {
 	namespace Core
 	{

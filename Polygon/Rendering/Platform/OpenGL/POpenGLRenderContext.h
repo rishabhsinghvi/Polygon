@@ -4,7 +4,7 @@
 #include "Core/Core.h"
 #include "Rendering/PRenderContext.h"
 
-namespace Polygon
+namespace PolygonEngine
 {
 	namespace Rendering
 	{
@@ -15,7 +15,7 @@ namespace Polygon
 				PRenderContext(platform)
 			{}
 
-			virtual void SetupRenderContext() override;
+			virtual void SetupRenderContext(void* windowHandle) override;
 		};
 	}
 }

@@ -1,7 +1,7 @@
 #include "PGLFWWindow.h"
 #include "Core/Logger/PLogger.h"
 
-namespace Polygon
+namespace PolygonEngine
 {
 	namespace Core
 	{
