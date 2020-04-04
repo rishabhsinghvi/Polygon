@@ -21,7 +21,7 @@ namespace PolygonEngine
 		{
 		}
 
-		PMat4::PMat4(const std::array<PReal, 16>& arr) noexcept:
+		PMat4::PMat4(const PStaticArray<PReal, SIZE>& arr) noexcept:
 			m_Data(std::move(arr))
 		{
 		}
@@ -38,7 +38,7 @@ namespace PolygonEngine
 
 		PMat4& PMat4::operator=(const PMat4& other)
 		{
-			for (auto i = 0; i < 16; i++)
+			for (auto i = 0; i < SIZE; i++)
 			{
 				m_Data[i] = other.m_Data[i];
 			}
@@ -75,9 +75,9 @@ namespace PolygonEngine
 
 		PMat4 PMat4::operator+(const PMat4& other) const
 		{
-			std::array<PReal, 16> temp;
+			PStaticArray<PReal, SIZE> temp;
 
-			for (auto i = 0; i < 16; i++)
+			for (auto i = 0; i < SIZE; i++)
 			{
 				temp[i] = m_Data[i] + other.m_Data[i];
 			}
@@ -109,9 +109,9 @@ namespace PolygonEngine
 
 		PMat4 PMat4::operator-(const PMat4& other) const
 		{
-			std::array<PReal, 16> temp;
+			PStaticArray<PReal, SIZE> temp;
 
-			for (auto i = 0; i < 16; i++)
+			for (auto i = 0; i < SIZE; i++)
 			{
 				temp[i] = m_Data[i] - other.m_Data[i];
 			}
@@ -167,7 +167,7 @@ namespace PolygonEngine
 
 		PMat4& PMat4::operator+=(const PMat4& other)
 		{
-			for (auto i = 0; i < 16; i++)
+			for (auto i = 0; i < SIZE; i++)
 			{
 				m_Data[i] += other.m_Data[i];
 			}
@@ -194,7 +194,7 @@ namespace PolygonEngine
 
 		PMat4& PMat4::operator-=(const PMat4& other)
 		{
-			for (auto i = 0; i < 16; i++)
+			for (auto i = 0; i < SIZE; i++)
 			{
 				m_Data[i] -= other.m_Data[i];
 			}
@@ -268,8 +268,9 @@ namespace PolygonEngine
 
 		PMat4 PMat4::operator*(PReal scalar) const
 		{
-			std::array<PReal, 16> temp;
-			for (auto i = 0; i < 16; i++)
+			PStaticArray<PReal, SIZE> temp;
+
+			for (auto i = 0; i < SIZE; i++)
 			{
 				temp[i] = m_Data[i] * scalar;
 			}
@@ -300,9 +301,9 @@ namespace PolygonEngine
 			if (scalar == 0.0)
 				return *this;
 
-			std::array<PReal, 16> temp;
+			PStaticArray<PReal, SIZE> temp;
 
-			for (auto i = 0; i < 16; i++)
+			for (auto i = 0; i < SIZE; i++)
 			{
 				temp[i] = m_Data[i] / scalar;
 			}

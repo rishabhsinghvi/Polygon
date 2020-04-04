@@ -1,4 +1,5 @@
 #include "PVector3.h"
+#include "PMat4.h"
 
 #include<cmath>
 
@@ -111,6 +112,12 @@ namespace PolygonEngine
 				return *this;
 
 			return PVector3(x / scalar, y / scalar, z / scalar);
+		}
+
+		bool PVector3::operator==(const PVector3& other) const
+		{
+			return POLYGON_REAL_EQUALS(x, other.x) && POLYGON_REAL_EQUALS(y, other.y) && 
+				POLYGON_REAL_EQUALS(z, other.z);
 		}
 
 		PReal PVector3::GetLength() const

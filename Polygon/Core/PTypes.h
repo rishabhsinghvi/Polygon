@@ -5,6 +5,7 @@
 #include<memory>
 #include<cstdint>
 #include<vector>
+#include<array>
 
 namespace PolygonEngine
 {
@@ -14,6 +15,11 @@ namespace PolygonEngine
 		Change it to custom allocator later
 	*/
 
+#ifdef POLYGON_REAL_IS_DOUBLE
+	using PReal = double;
+#else
+	using PReal = float;
+#endif // POLYGON_REAL_IS_DOUBLE
 
 	using PString = std::basic_string<char>;
 	using PWString = std::basic_string<wchar_t>;
@@ -28,6 +34,9 @@ namespace PolygonEngine
 
 	template<typename T>
 	using PDynArray = std::vector<T>;
+
+	template<typename T, size_t SIZE>
+	using PStaticArray = std::array<T, SIZE>;
 
 }
 

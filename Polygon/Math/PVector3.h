@@ -2,7 +2,7 @@
 #define POLYGON_VECTOR3_H
 
 #include "Core/Core.h"
-#include "PMath.h"
+#include "Core/PTypes.h"
 
 namespace PolygonEngine
 {
@@ -36,6 +36,8 @@ namespace PolygonEngine
 			PVector3 operator-(PReal scalar) const;
 			PVector3 operator*(PReal scalar) const;
 			PVector3 operator/(PReal scalar) const;
+
+			bool operator==(const PVector3& other) const;
 
 			PReal GetLength() const;
 

@@ -3,6 +3,7 @@
 
 #include "Core/Core.h"
 #include "PMath.h"
+#include "Core/PTypes.h"
 
 #include<array>
 #ifdef _DEBUG
@@ -21,7 +22,9 @@ namespace PolygonEngine
 		{
 
 		private:
-			std::array<PReal, 9> m_Data;
+			static constexpr size_t SIZE = 9;
+			PStaticArray<PReal, SIZE> m_Data;
+			//std::array<PReal, 9> m_Data;
 
 		public:
 
