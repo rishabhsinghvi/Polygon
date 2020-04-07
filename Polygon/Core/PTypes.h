@@ -31,12 +31,14 @@ namespace PolygonEngine
 	using PSharePtr = std::shared_ptr<T>;
 
 	using PUInt8 = uint8_t;
+	using PUInt32 = std::uint32_t;
 
 	template<typename T>
 	using PDynArray = std::vector<T>;
 
 	template<typename T, size_t SIZE>
 	using PStaticArray = std::array<T, SIZE>;
+
 
 }
 
