@@ -1,7 +1,7 @@
 #ifndef POLYGON_VECTOR4_H
 #define POLYGON_VECTOR4_H
 
-#include "Core/PTypes.h"
+#include "Core/Types/PTypes.h"
 #include "Core/Core.h"
 
 namespace PolygonEngine

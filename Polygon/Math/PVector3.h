@@ -2,7 +2,7 @@
 #define POLYGON_VECTOR3_H
 
 #include "Core/Core.h"
-#include "Core/PTypes.h"
+#include "Core/Types/PTypes.h"
 
 namespace PolygonEngine
 {

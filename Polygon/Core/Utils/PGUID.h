@@ -1,10 +1,12 @@
 #ifndef POLYGON_CORE_GUID_H
 #define POLYGON_CORE_GUID_H
 
-#include "Core/PTypes.h"
+#include "Core/Types/PStaticArray.h"
+#include "Core/Types/PIntTypes.h"
 
 #include <numeric>
 #include <algorithm>
+#include <string>
 
 namespace PolygonEngine
 {
@@ -25,6 +27,9 @@ namespace PolygonEngine
 					[](PUInt32 checksum, PUInt8 value)
 					{ return table[(checksum ^ value) & 0xFFu] ^ (checksum >> 8); });
 		}
+
+		
+		
 
 	}
 }

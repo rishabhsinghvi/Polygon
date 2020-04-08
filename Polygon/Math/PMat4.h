@@ -3,7 +3,7 @@
 
 #include "Core/Core.h"
 #include "PMath.h"
-#include "Core/PTypes.h"
+#include "Core/Types/PStaticArray.h"
 
 #include<array>
 #ifdef _DEBUG

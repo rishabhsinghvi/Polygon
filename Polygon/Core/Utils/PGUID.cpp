@@ -1,5 +1,7 @@
 #include "PGUID.h"
 
+#include <algorithm>
+
 namespace PolygonEngine
 {
 	namespace Core
@@ -23,5 +25,7 @@ namespace PolygonEngine
 
 			return table;
 		}
+
+		
 	}
 }

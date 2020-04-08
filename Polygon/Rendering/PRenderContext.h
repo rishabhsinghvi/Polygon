@@ -2,7 +2,8 @@
 #define POLYGON_RENDER_CONTEXT_H
 
 #include "Core/Core.h"
-#include "Core/PTypes.h"
+#include "Core/Types/PMemoryTypes.h"
+#include "Core/Types/PIntTypes.h"
 
 namespace PolygonEngine
 {
