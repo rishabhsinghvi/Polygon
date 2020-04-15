@@ -24,7 +24,6 @@ namespace PolygonEngine
 
 			PPlane(const PPlane& other);
 
-
 		};
 	}
 }

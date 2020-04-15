@@ -125,6 +125,11 @@ namespace PolygonEngine
 			return ::sqrt(x * x + y * y + z * z);
 		}
 
+		PReal PVector3::GetLengthSquared() const
+		{
+			return x * x + y * y + z * z;
+		}
+
 		void PVector3::Normalize()
 		{
 			auto length = GetLength();
@@ -156,5 +161,9 @@ namespace PolygonEngine
 				first.z * second.x - first.x * second.z,
 				first.x * second.y - first.y * second.x);
 		}
-	}
+		PVector3 operator*(PReal scalar, const PVector3& vec)
+		{
+			return vec * scalar;
+		}
+}
 }

@@ -6,7 +6,7 @@ namespace PolygonEngine
 {
 	namespace Core
 	{
-		PStaticArray<PUInt32, TABLE_SIZE> GenerateCRCTable()
+		/*PStaticArray<PUInt32, TABLE_SIZE> GenerateCRCTable()
 		{
 
 			PStaticArray<PUInt32, TABLE_SIZE> table;
@@ -24,7 +24,7 @@ namespace PolygonEngine
 				});
 
 			return table;
-		}
+		}*/
 
 		
 	}

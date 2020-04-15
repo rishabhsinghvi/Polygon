@@ -39,7 +39,10 @@ namespace PolygonEngine
 
 			bool operator==(const PVector3& other) const;
 
+			friend PVector3 operator*(PReal scalar, const PVector3& vec);
+
 			PReal GetLength() const;
+			PReal GetLengthSquared() const;
 
 			void Normalize();
 			PVector3 GetNormalized() const;

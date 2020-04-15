@@ -1,6 +1,7 @@
 #include "PStringUtils.h"
 
 #include <algorithm>
+#include <random>
 
 namespace PolygonEngine
 {
@@ -44,6 +45,25 @@ namespace PolygonEngine
 		PString ToUpper(PString&& string)
 		{
 			return TransformString(std::move(string), STM_UPPER);
+		}
+
+		PString RandomString(PString::size_type length)
+		{	
+			static constexpr auto chars = "0123456789""ABCDEFGHIJKLMNOPQRSTUVWXYZ""abcdefghijkllmnopqrstuvwxyz";
+			static constexpr auto charsLength = 62;
+
+			std::random_device rd;
+			std::mt19937 gen(rd());
+			std::uniform_int_distribution<> dis(0, charsLength);
+
+			PString randomString;
+			randomString.resize(length);
+
+			std::generate_n(std::begin(randomString), length, [&]() {
+				return chars[dis(gen)];
+				});
+
+			return randomString;
 		}
 
 
