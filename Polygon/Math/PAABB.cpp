@@ -37,11 +37,6 @@ namespace PolygonEngine
 			return (m_Min + m_Max) * static_cast<PReal>(0.5);
 		}
 
-		PVector3 PAABB::Centroid() const
-		{
-			return Center();
-		}
-
 		bool PAABB::Contains(const PVector3& point) const
 		{
 			return m_Min.x <= point.x && m_Max.x >= point.x && 

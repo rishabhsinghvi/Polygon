@@ -7,17 +7,17 @@ namespace PolygonEngine
 {
 	namespace Math
 	{
-		PLineSegment::PLineSegment(const PVector3& start, const PVector3& end):
+		PLineSegment::PLineSegment(const PVector3& start, const PVector3& end) noexcept:
 			m_Start(start), m_End(end)
 		{
 		}
 
-		PLineSegment::PLineSegment(const PLineSegment& line):
+		PLineSegment::PLineSegment(const PLineSegment& line) noexcept:
 			m_Start(line.m_Start), m_End(line.m_End)
 		{
 		}
 
-		PLineSegment::PLineSegment(PLineSegment&& line):
+		PLineSegment::PLineSegment(PLineSegment&& line) noexcept:
 			m_Start(std::move(line.m_Start)), m_End(std::move(m_End))
 		{
 		}

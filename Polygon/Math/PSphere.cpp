@@ -9,27 +9,27 @@ namespace PolygonEngine
 {
 	namespace Math
 	{
-		PSphere::PSphere(const PVector3& center, PReal radius):
+		PSphere::PSphere(const PVector3& center, PReal radius) noexcept:
 			m_Center(center), m_Radius(radius)
 		{
 		}
 
-		PSphere::PSphere(PReal radius):
+		PSphere::PSphere(PReal radius) noexcept:
 			m_Center(0.0, 0.0, 0.0), m_Radius(radius)
 		{
 		}
 
-		PSphere::PSphere(PReal cX, PReal cY, PReal cZ, PReal radius):
+		PSphere::PSphere(PReal cX, PReal cY, PReal cZ, PReal radius) noexcept:
 			m_Center(cX, cY, cZ), m_Radius(radius)
 		{
 		}
 
-		PSphere::PSphere(const PSphere& other):
+		PSphere::PSphere(const PSphere& other) noexcept:
 			m_Center(other.m_Center), m_Radius(other.m_Radius)
 		{
 		}
 
-		PSphere::PSphere(PSphere&& other):
+		PSphere::PSphere(PSphere&& other) noexcept:
 			m_Center(std::move(other.m_Center)), m_Radius(other.m_Radius)
 		{
 		}
